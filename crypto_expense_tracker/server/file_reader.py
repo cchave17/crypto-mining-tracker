@@ -1,7 +1,20 @@
 import pandas as pd
 
+file = "D:\Personal Projects\Mining-Tracker\crypto-mining-tracker\Sept_20_2021_Expense_Tracker.xlsx"
 
-file = "/crypto-mining-tracker/Sept_20_2021_Expense_Tracker.xlsx"
+
+class Person:
+    def __init__(self, name, expenses):
+        self.name = name
+        self.expenses = expenses
+
+    def get_person(self):
+        person = {
+            self.name: {
+                "Expenses": self.expenses
+            }
+        }
+        return person
 
 
 def get_all_names(cols):
@@ -28,8 +41,6 @@ def get_all_items(file):
             tracker[name] = cur_person
 
     print(tracker)
-
-
 
 
 get_all_items(file)
